@@ -34,7 +34,7 @@ def download_Photos(listURLs):
     intCount = 1
     list_img = []
     for strURL in listURLs:
-        with open(r'static\\shift' + '\\' + str(intCount) + '.jpg', 'wb') as file:
+        with open(r'static/shift' + '/' + str(intCount) + '.jpg', 'wb') as file:
             img = R.get(strURL)
             file.write(img.content)
         intCount += 1
