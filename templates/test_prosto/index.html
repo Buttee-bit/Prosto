@@ -1,0 +1,25 @@
+{% extends 'partials/base.html' %} {% block title %}Dashboard{% endblock %} {% block content %}
+<div class="row mt-3 pt-3">
+    <div class="col-md-12">
+        <div class="border p-10 shadow">
+            <h4 >Разложение на эмоциональные компоненты</h4>
+            <hr>
+            <h1 align="center">Введите свое предложение</h1>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row contend">
+                    <div class="col-md-12" align="center" >
+                        <input  align="center"type="text" name="message" id="message" required="required"  maxlength="100" >
+                    </div>
+                </div>
+                <div class="col-md-9" align="center" > <br>
+                    <button id="submit" class="btn-primary">Сингулировать</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% block messages %} {% if messages %} {% for message in messages%} {{message}} {% endfor %} {% endif %} {% endblock %} {% endblock %}
