@@ -1,7 +1,10 @@
+import imp
 import json
 import random
 import os
 import requests as R
+import cv2 
+import numpy as np
 
 def open_js(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -26,19 +29,12 @@ def random_key(jsons, list_key):
     return disct_answer
 
 
-def create_NewFolder(strFolderName):
-    strCurrentPath = os.getcwd()
 
-    if not os.path.isdir(strFolderName):
-        os.mkdir(strFolderName)
-    # print('New folder is created and located at ', strCurrentPath + '\\' + strFolderName)
-    return strCurrentPath + '\\' + strFolderName
-
-
-def download_Photos(listURLs, strFolderPath):
+def download_Photos(listURLs):
     intCount = 1
+    list_img = []
     for strURL in listURLs:
-        with open(strFolderPath + '\\' + str(intCount) + '.jpg', 'wb') as file:
+        with open(r'static\\shift' + '\\' + str(intCount) + '.jpg', 'wb') as file:
             img = R.get(strURL)
             file.write(img.content)
         intCount += 1
@@ -51,6 +47,5 @@ def main(path):
     open_js_ = open_js(full_path)
     list_keys_ = list_keys(open_js_)
     answer = random_key(open_js_, list_keys_)
-    folder_path = create_NewFolder(name_)
-    download_Photos(answer.values(), folder_path)
+    download_Photos(answer.values())
 

@@ -3,6 +3,8 @@ import os
 
 import scrap
 import parsing_json 
+import PLT_use_ex
+
 
 # Create your views here.
 def index(request):
@@ -20,10 +22,11 @@ def readtext(str):
     def get(str):
         scrap.start(str)
         parsing_json.main(str)
+        PLT_use_ex.image_compose()
         text = str
         Path_image = r'{text}/1.jpg'
         print(os.getcwd())
-
+        
         return text, Path_image
     text, Path_image = get(str)
     
