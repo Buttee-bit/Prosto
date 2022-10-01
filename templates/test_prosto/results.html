@@ -1,25 +1,24 @@
-{% extends 'partials/base.html' %} {% block title %}Dashboard{% endblock %} 
-{% block content %}
+{% extends 'partials/base.html' %} {% block title %}Dashboard{% endblock %} {% load static %} {% block content %}
 <style>
     .container {
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 50px;
     }
+    
     .card {
         padding: 100px;
     }
 </style>
 <div class="container">
-<div class="card">
-    <img src={{ text_ }} class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">{{text_}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="card">
+        <h5 class="card-title" align="center">{{text_}}</h5>
+        <img class="w-50 mx-auto d-block" src="{% static 'img/example.jpg' %}" alt="photo">
+        <div class="card-body">
+            <h5 class="card-title">{{text_}}</h5>
+            <p class="card-text">Разложение по составляющим</p>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock %}
-
