@@ -1,8 +1,8 @@
 from django.shortcuts import render ,redirect
+import os
 
-import requests as R
-from bs4 import BeautifulSoup as BS
-from fake_useragent import UserAgent
+import scrap
+import parsing_json 
 
 # Create your views here.
 def index(request):
@@ -16,16 +16,22 @@ def index(request):
    # return  render(request, 'test_prosto/results.html' ,context)
 
 def readtext(str):
-    global text
+    global text, Path_image
     def get(str):
+        scrap.start(str)
+        parsing_json.main(str)
         text = str
-        print('def get(str)')
-        return text
-    text = get(str)
+        Path_image = r'{text}/1.jpg'
+        print(os.getcwd())
+
+        return text, Path_image
+    text, Path_image = get(str)
     
 def results(request):
+    Path_image_ = Path_image
     text_ = text
     context = {
-        'text_':text_
+        'text_':text_,
+        'Path_image_':Path_image_
     }
     return render(request, 'test_prosto/results.html',context )
