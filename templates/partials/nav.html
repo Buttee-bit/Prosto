@@ -1,16 +1,70 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container_nav">
-        <a class="navbar-brand" href="http://127.0.0.1:8000/">Чатик с эмоциями</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat';
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'homepage'%}">О нашей команде</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    * {
+        font-family: Montserrat;
+    }
+
+    html {
+
+        color: #222;
+        font-size: 1em;
+        line-height: 1.5;
+        box-sizing: border-box
+    }
+
+    body {
+        margin: 0;
+    }
+
+    a {
+        color: #777;
+        text-decoration: none;
+    }
+
+    .header {
+        font-size: 24px;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Montserrat;
+        font-weight: 600;
+        color: #484848;
+        margin: 30px 0 25px 0;
+        line-height: 1.3
+    }
+
+    .container {
+        padding: 0 20px;
+        margin: 0 auto
+    }
+
+    .container:after,
+    .container:before {
+        content: " ";
+        display: table
+    }
+
+    .container:after {
+        clear: both
+    }
+
+    .intro h1 {
+        color: #000;
+    }
+
+    .intro h1 strong {
+        color: #ffd300
+    }
+
+</style>
+<header class="header ">
+    <a class="logo" href="http://127.0.0.1:8000/">SoL</a>
+</header>
