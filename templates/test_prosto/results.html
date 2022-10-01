@@ -1,24 +1,25 @@
 {% extends 'partials/base.html' %} {% block title %}Dashboard{% endblock %} {% load static %} {% block content %}
 <style>
-    .container {
-        display: flex;
+    .img-container {
+        display: block;
         align-items: center;
         justify-content: center;
         margin-top: 50px;
+        padding: 25px;
+        border: 1px solid #000;
     }
-    
-    .card {
-        padding: 100px;
+
+    .img-item {
+        width: 200px;
+        height: 200px;
     }
 </style>
-<div class="container">
-    <div class="card">
-        <h5 class="card-title" align="center">{{text_}}</h5>
-        <img class="w-50 mx-auto d-block" src="{% static 'img/final.jpg' %}" alt="photo">
-        <div class="card-body">
-            <h5 class="card-title" align="center">Разложение по составляющим</h5>
-            <p class="card-text" align="center">Ваша пикча</p>
-        </div>
+
+<div class="img-container">
+    <h5 class="card-title" align="center">{{text_}}</h5>
+    <img class="mx-auto d-block img-item" src="{% static 'img/final.jpg' %}" alt="photo">
+    <div class="card-body">
+        <p class="card-text" align="center">Ваша пикча</p>
     </div>
 </div>
 {% endblock %}
