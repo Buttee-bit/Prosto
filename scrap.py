@@ -43,6 +43,7 @@ def get_Photos_objs(strURL, strTagName='img' ,strClassName = 'serp-item__thumb j
         subPhoto = photo(get_subtext(str(element), 'alt'),'https:' + get_subtext(str(element), 'src'))
         # subPhoto.print_info()
         listPhotoObjs.append(subPhoto)
+    print(listPhotoObjs)
         
     return listPhotoObjs
 
