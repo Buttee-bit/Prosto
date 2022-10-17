@@ -3,7 +3,6 @@ import json
 import random
 import os
 import requests as R
-import cv2 
 import numpy as np
 
 def open_js(path):
